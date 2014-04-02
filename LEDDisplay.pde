@@ -141,15 +141,35 @@ public class LEDDisplay {
     udp.send(modeBuffer, address, port);
   }
 
+
+  // Brute force the fucking led mapping
+  public PImage scrambler() {
+    PImage inputImage = get();
+    PImage outputImage = new PImage(w,h);
+    
+    inputImage.loadPixels();
+    outputImage.loadPixels();
+    
+    for (Edge e : edges) {
+      e.copyOver(inputImage, outputImage);
+    }
+    
+    return outputImage;
+  }
+
   public void sendData() {
-    PImage image = get();
+    //PImage image = get();
+    PImage image = scrambler();
+    
+//    background(0);
+//    image(image,0,0);
 
     //    if (image.width != w || image.height != h) {
     //      image.resize(w,h);
     //    }
 
-    image.loadPixels();
-    loadPixels();
+    //image.loadPixels();
+    //loadPixels();
 
     int r;
     int g;
@@ -188,7 +208,10 @@ public class LEDDisplay {
         }
       }
     }
-    updatePixels();
+    
+    
+    
+//    updatePixels();
     udp.send(buffer, address, port);
   }
 }

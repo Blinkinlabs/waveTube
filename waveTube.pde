@@ -23,20 +23,40 @@ Routine pong = new Pong();
 Routine backupRoutine = null;
 
 Routine[] enabledRoutines = new Routine[] {
-  ////new Animator("anim-nyancat",1,.5,0,0,0),
-  ////new Flat(),
+//  ////new Animator("anim-nyancat",1,.5,0,0,0),
+//new Flat(),
   new Bursts(), 
-  ////  new Chase(),
+//  new Chase(),
   new ColorDrop(), 
-  ////new DropTheBomb(),
-  ////new FFTDemo(), 
-  ////  new Fire(),
-  ////  new Greetz(),
+//  ////new DropTheBomb(),
+//  ////new FFTDemo(), 
+//  ////  new Fire(),
+//  ////  new Greetz(),
   new RGBRoutine(), 
-  ////new RainbowColors(), 
-  //new Warp(null, true, false, 0.5, 0.5), 
+//  ////new RainbowColors(), 
+//  //new Warp(null, true, false, 0.5, 0.5), 
   new Warp(new WarpSpeedMrSulu(), false, true, 0.5, 0.5), 
   new Waves(),
+};
+
+Edge[] edges = new Edge[] {
+  new Edge(0,0,13,180,false),
+  new Edge(1,3,21,180,false),
+  new Edge(2,7,13,120,true),
+  new Edge(3,6,21,120,true),
+  new Edge(4,6,13,60,false),
+  new Edge(5,5,21,60,false),
+  new Edge(6,8,13,0,true),
+  new Edge(7,8,21,0,true),
+  
+  new Edge(8,7,23,0,true),
+  new Edge(9,6,14,0,true),
+  new Edge(10,8,23,60,false),
+  new Edge(11,8,14,60,false),
+  new Edge(12,0,23,120,true),
+  new Edge(13,0,14,120,true),
+  new Edge(14,12,23,180,false),
+  new Edge(15,12,14,180,false),
 };
 
 int w = 0;
