@@ -1,4 +1,4 @@
-Transmits data to our blinky dome
+Hacked up version of the DomeStar code, used to drive the waveTube installation at Glamtech 2014. This is mostly superceded by other LEDscape work. Good luck!
 
 Requires the following libraries:
 
